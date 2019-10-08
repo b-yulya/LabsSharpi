@@ -4,12 +4,34 @@ namespace ConsoleApp1
     partial class Phone
     {
         static public readonly string ID = "qwe";
-        public const string UNIVER = "BSTU";
+        public const int NUM =30;
         static public int count;
         private int number;
-        private string Name;
+        public int timesity;
+        public int longdistance;
+        public string Name;
         private string Adress { get; set; }
-        
+        private int balance;
+        public int credit;
+
+        public int Balance
+        {
+            get
+            {
+                return balance;
+            }
+            set
+            {
+                if(value > 0)
+                {
+                    balance = value;
+                }
+                else
+                {
+                    Console.WriteLine("Некорректные данные");
+                }
+            }
+        }
         public int Number
         {
             get
@@ -18,7 +40,7 @@ namespace ConsoleApp1
             }
             set
             {
-                if(Number > 0)
+                if(value > 0)
                 {
                     number = value;
                 }
@@ -28,13 +50,48 @@ namespace ConsoleApp1
                 }
             }
         }
-        private string TimeCity { get; set; }
-        private string TimeLongDistance { get; set; }
+        public int TimeCity
+        {
+            get
+            {
+                return timesity;
+            }
+            set
+            {
+                if (value > 0)
+                {
+                    timesity = value;
+                }
+                else
+                {
+                    Console.WriteLine("Некорректные данные");
+                }
+            }
+        }
+        public int LongDistance
+        {
+            get
+            {
+                return longdistance;
+            }
+            set
+            {
+                if (value > 0)
+                {
+                    longdistance = value;
+                }
+                else
+                {
+                    Console.WriteLine("Некорректные данные");
+                }
+            }
+        }
 
         public Phone()
         {
             Console.WriteLine("Конструктор по умолчанию");
             count++;
+
 
         }
 
@@ -58,7 +115,7 @@ namespace ConsoleApp1
         static Phone()
         {
 
-            Console.WriteLine("Вызывлся статиический конструктор");
+            Console.WriteLine("Вызвался статический конструктор");
             Console.WriteLine(ID.GetHashCode());
         }
 
@@ -75,6 +132,24 @@ namespace ConsoleApp1
         static public void Info()
         {
             Console.WriteLine($"Объектов создано {count}");
+            
         }
+        public void Credit(int x)
+        {
+            credit += x;
+        }
+        public void Balans()
+        {
+            if (credit > 0)
+            {
+                balance += credit;
+                Console.WriteLine($"Ваш баланс {balance}");
+            }
+            else
+            {
+                Console.WriteLine($"Ваш баланс {balance}");
+            }
+        }
+       
     }
 }
