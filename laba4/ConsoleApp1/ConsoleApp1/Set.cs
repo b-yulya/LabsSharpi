@@ -65,14 +65,14 @@ namespace ConsoleApp1
 
         public class Date
         {
-            public static int coont = 1;
+            public static int count = 1;
             public string createdate;
             public Date()
             {
 
                 createdate = DateTime.Now.ToString();
-                Console.WriteLine($"Время создания {coont} объекта {createdate}");
-                coont++;
+                Console.WriteLine($"Время создания {count} объекта {createdate}");
+                count++;
             }
         }
         public class Owner

@@ -6,36 +6,35 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            Seet kek = new Seet();
-            kek.Add(5);
-            kek.Add(3);
-            kek.Add(2);
-            kek.Add(7);
-            kek.Add(-3);
-            kek.Add(-1);
-            Seet kek2 = new Seet();
-            kek2.Add(1);
-            kek2.Add(2);
-            kek2.Add(3);
-            kek2.Add(7);
-            Seet kek3 = new Seet();
-            var qw = 3 > kek2;
-            var qwe = 6 < kek;
-            var qqq = kek * kek2;
+            Seet obj1 = new Seet();
+            obj1.Add(5);
+            obj1.Add(3);
+            obj1.Add(2);
+            obj1.Add(7);
+            obj1.Add(-3);
+            obj1.Add(-1);
+            Seet obj2 = new Seet();
+            obj2.Add(1);
+            obj2.Add(2);
+            obj2.Add(3);
+            obj2.Add(7);
+            Seet obj3 = new Seet();
+            var qw = 3 > obj2;
+            var qwe = 6 < obj1;
+            var qqq = obj1 * obj2;
             Console.WriteLine(qw);
             Console.WriteLine(qwe);
             Console.WriteLine(qqq);
             Seet.Date Create = new Seet.Date();
             Seet.Date Create2 = new Seet.Date();
             Seet.Owner pro = new Seet.Owner();
-            StaticOperation.Difference(kek2);
-            StaticOperation.Sum(kek2);
-            StaticOperation.Count(kek2);
+            StaticOperation.Difference(obj2);
+            StaticOperation.Sum(obj2);
+            StaticOperation.Count(obj2);
             string stroka = "Andrey21";
             Console.WriteLine(stroka);
             StaticOperation.Sub(stroka);
-            StaticOperation.Plus(kek, kek3);
-            
+            StaticOperation.Plus(obj1, obj3);
             
 
 

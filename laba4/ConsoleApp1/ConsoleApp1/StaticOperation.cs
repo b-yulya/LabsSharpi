@@ -40,7 +40,7 @@
             }
             System.Console.WriteLine($"Количество элементов {count}");
         }
-        public static void Sub(this string str)
+        public static void Sub(this string str) // Выделение первого числа, содержащего в строке
         {
             for(int i = 0; i < str.Length; i++)
             {
@@ -51,7 +51,7 @@
                 }
             }
         }
-        public static void Plus(Seet item, Seet item2)
+        public static void Plus(this Seet item, Seet item2) // Удаление положительных элементов из множества
         {
             for(int i=0;i<item.Items.Count; i++)
             {
