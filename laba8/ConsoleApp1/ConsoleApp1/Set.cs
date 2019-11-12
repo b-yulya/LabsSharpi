@@ -3,17 +3,51 @@ using System.Collections.Generic;
 
 namespace ConsoleApp1
 {
-    public class Seet
+    interface IGeneric<T> where T : struct
     {
+        void Ad(T item);
+        void Remove(T item);
+        void Display(Seet<T> Items);
+    }
+    public class Seet <T> : IGeneric<T> where T : struct
+    {
+        public List<T> Spis = new List<T>();
+        public void Ad(T item)
+        {
+            if (!Spis.Contains(item))
+            {
+                Spis.Add(item);
+
+            }
+            
+        }
+
+        public void Remove(T item)
+        {
+            if (Spis.Contains(item))
+            {
+                Spis.Remove(item);
+            }
+        }
+
+        public void Display(Seet<T> Item)
+        {
+            foreach(T ch in Item.Spis)
+            {
+                Console.Write($"{ch}  ");
+            }
+            Console.WriteLine();
+        }
+
         public static int count;
         public Seet()
         {
             count++;
             Console.WriteLine($"Создано {count}-е множество");
         }
-        public List<int> Items = new List<int>();
+        public List<T> Items = new List<T>();
 
-        public void Add(int _item)
+        public void Add(T _item)
         {
             if (!Items.Contains(_item))
             {
@@ -21,7 +55,7 @@ namespace ConsoleApp1
 
             }
         }
-        public static string operator >(int elem, Seet item)
+        public static string operator >(T elem, Seet<T> item)
         {
 
             if (item.Items.Contains(elem))
@@ -33,7 +67,7 @@ namespace ConsoleApp1
                 return $"{elem} нету в {item}";
             }
         }
-        public static string operator <(int item1, Seet item2)
+        public static string operator <(T item1, Seet<T> item2)
         {
             if (!item2.Items.Contains((item1)))
             {
@@ -44,11 +78,11 @@ namespace ConsoleApp1
                 return $"{item1} есть в {item2}";
             }
         }
-        public static string operator *(Seet item1, Seet item2)
+        public static string operator *(Seet<T> item1, Seet<T> item2)
         {
-            List<int> item3 = new List<int>();
+            List<T> item3 = new List<T>();
             Console.WriteLine("Пересечение множеств");
-            foreach (int ch in item1.Items)
+            foreach (T ch in item1.Items)
             {
                 if (item2.Items.Contains(ch))
                 {
@@ -56,7 +90,7 @@ namespace ConsoleApp1
                 }
 
             }
-            foreach (int cc in item3)
+            foreach (T cc in item3)
             {
                 Console.WriteLine(cc);
             }
@@ -73,10 +107,6 @@ namespace ConsoleApp1
                 createdate = DateTime.Now.ToString();
                 Console.WriteLine($"Время создания {count} объекта {createdate}");
                 count++;
-            }
-            public static explicit operator string (Date a)
-            {
-                return a.createdate;
             }
         }
         public class Owner

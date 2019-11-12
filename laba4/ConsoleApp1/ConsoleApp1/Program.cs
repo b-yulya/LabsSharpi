@@ -35,6 +35,15 @@ namespace ConsoleApp1
             Console.WriteLine(stroka);
             StaticOperation.Sub(stroka);
             StaticOperation.Plus(obj1, obj3);
+
+
+
+
+
+
+            Seet.Date data = new Seet.Date() { createdate = "21.03.2000" };
+            string x = (string)data;
+            Console.WriteLine(x);
             
 
 
