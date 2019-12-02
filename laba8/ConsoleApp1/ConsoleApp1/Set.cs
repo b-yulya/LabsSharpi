@@ -47,7 +47,7 @@ namespace ConsoleApp1
         }
         public List<T> Items = new List<T>();
 
-        public void Add(T _item)
+        public void Add( T _item)
         {
             if (!Items.Contains(_item))
             {
