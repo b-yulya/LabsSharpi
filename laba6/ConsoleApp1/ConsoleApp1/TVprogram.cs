@@ -253,12 +253,25 @@ namespace ConsoleApp1
 
     enum obj
     {
-        Monday = 1,
+        Monday,
         Tuesday,
         Whensday,
         Thursday,
         Friday,
         Saturday,
         Sunday
+    }
+
+
+
+    public partial class Olya
+    {
+        public string name;
+    }
+
+
+    public partial class Olya
+    {
+        public string Age;
     }
 }

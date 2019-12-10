@@ -10,9 +10,12 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
+            Producer Olya = new Producer();
             Producer Kail = new Producer();
             Person person = new Person();
             Person persona = Kail;
+            Producer Olu = (Producer)person;
+           
             if (person is Producer)
             {
                 Producer Igor = (Producer)person;

@@ -51,7 +51,7 @@ namespace ConsoleApp1
         public abstract void Watch();
     }
 
-    class Film : TVprogram, ITVprogram
+    class Film : TVprogram
     {
         static int limit = 16;
         public Film(int age)
@@ -73,7 +73,7 @@ namespace ConsoleApp1
         {
             return $"Возрастное ограничение на просмотр этого фильма {agelimit}";
         }
-    }
+    } 
 
     class News : TVprogram, ITVprogram
     {
